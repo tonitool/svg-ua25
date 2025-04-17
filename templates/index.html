@@ -64,23 +64,21 @@
         .error {
             color: red;
         }
-
         .result {
-    margin-top: 30px;
-    max-height: 400px;  /* Limit the height of the image container */
-    overflow-y: auto;   /* Allow vertical scrolling if content overflows */
-    border-radius: 5px;
-    border: 2px solid #FF0087; /* Add border around the result image */
-    padding: 10px;
-}
-
-.result img {
-    width: 100%;         /* Ensures the image fits the width of the container */
-    height: auto;        /* Keeps aspect ratio intact */
-    max-width: 100%;     /* Prevents image from overflowing the container */
-    max-height: 100%;    /* Ensures the image doesn’t exceed the container’s height */
-}
-
+            margin-top: 30px;
+            max-height: 400px;  /* Limit the height of the image container */
+            overflow-y: auto;   /* Allow vertical scrolling if content overflows */
+            border-radius: 5px;
+            border: 2px solid #FF0087; /* Add border around the result image */
+            padding: 10px;
+            display: none; /* Initially hide the result container */
+        }
+        .result img {
+            width: 100%;         /* Ensures the image fits the width of the container */
+            height: auto;        /* Keeps aspect ratio intact */
+            max-width: 100%;     /* Prevents image from overflowing the container */
+            max-height: 100%;    /* Ensures the image doesn’t exceed the container’s height */
+        }
         /* Add animation to buttons and hover effects */
         button:active {
             transform: translateY(2px);
@@ -126,6 +124,7 @@
                     const img = document.createElement("img");
                     img.src = result.url;
                     img.alt = "Converted SVG Image";
+                    document.getElementById("result").style.display = "block";  // Show the result container
                     document.getElementById("result").appendChild(img);
                 } else {
                     document.getElementById("status").textContent = "Failed to convert image.";
