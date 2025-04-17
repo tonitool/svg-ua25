@@ -1,4 +1,5 @@
 Flask==2.0.2
+Werkzeug==1.0.1  # This ensures compatibility with Flask 2.0.2
 requests==2.26.0
 Pillow==8.4.0
-openai
+openai==1.75.0
